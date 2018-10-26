@@ -18,9 +18,9 @@ $$\{\texttt{am eta mes},\ \ \  \texttt{ame tames},\ \ \  \texttt{amet ames},\ \ 
 \end{problemDescription}
 
 \begin{inputDescription}
-La entrada consiste de un número variable de líneas. la primera línea contiene un entero $N$ que describe el número de palabras del diccionario. Las siguiente $N$ líneas contienen una cadena de caractéres que representa una palabra del diccionario. El diccionario $\textbf{no}$ contrendrá palabras repetidas. Finalemente, la última línea de la entrada contiene una cadena de catacteres que codifica el texto a decodificar. 
+La entrada consiste de un número variable de líneas. la primera línea contiene un entero $N \geq 1$ que describe el número de palabras del diccionario. Las siguiente $N$ líneas contienen una cadena de caractéres que representa una palabra del diccionario. El diccionario $\textbf{no}$ contrendrá palabras repetidas. Finalemente, la última línea de la entrada contiene una cadena de catacteres que codifica el texto a decodificar. 
 
-Cada cadena de caracteres está compuesta por las letras $\texttt{a},\texttt{b},\dots,\texttt{z}$ (ASCII 097 a 122). Además, cada una tiene al menos un caracter y máximo $10^6$.
+Cada cadena de caracteres está compuesta por las letras $\texttt{a},\texttt{b},\dots,\texttt{z}$ (ASCII 097 a 122). Además, cada una tiene al menos un caracter y máximo $10^5$.
 \end{inputDescription}
 
 \begin{outputDescription}
@@ -29,8 +29,8 @@ Una línea conteniendo un entero con la cantidad de formas de interpretar el tex
 
 \begin{scoreDescription}
   \score{20} Todas las palabras del diccionario son del mismo tamaño. 
-  \score{20} Las palabras del diccionario tienen largo máximo 10.
-  \score{60} Sin restricciones.
+  \score{20} Las palabras del diccionario tienen largo máximo 10 y $N \leq 10$.
+  \score{60} $N \leq 100$
 \end{scoreDescription}
 
 \begin{sampleDescription}
