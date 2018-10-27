@@ -1,5 +1,9 @@
 {
     "tasks": [
-        "diccionario"
-    ]
+        "diccionario",
+        "serpientes",
+        "plataformas",
+        "baldosas"
+    ],
+    "phase": "Final Nacional"
 }
