@@ -2,25 +2,45 @@
 \usepackage[utf8]{inputenc}
 \usepackage{lipsum}
 
-\title{Ejemplo}
+\title{Plataformas}
 
 \begin{document}
 \begin{problemDescription}
-\lipsum[1-3]
+Ociman debe escalar una montaña para conseguir una espada legendaria.
+
+En la ladera de la montaña, existe un conjunto de plataformas horizontales sobre las que Ociman puede caminar y entre las cuales puede saltar, siempre que sea capaz de alcanzarlas.
+% TODO dibujo que muestre un set de plataformas simples, que coincida con uno de los ejemplos de entrada/salida.
+Ociman puede saltar de la plataforma $i$ a altura $h_i$ a la plataforma $j$ a altura $h_j$ si:
+$$h_i - h_j \ge 25-(x-5)^2$$
+donde $x$ es la distancia horizontal entre plataformas.
+% TODO considerar la opción de entregarles una función que dado dx retorna el máximo dy.
+% Vista de la función en https://www.wolframalpha.com/input/?i=25+-+(%7Cx%7C-5)%5E2
+¿Puede llegar Ociman a la espada? De ser así, ¿cuántos saltos debe realizar Ociman para llegar a la espada legendaria?
+
 \end{problemDescription}
 
 \begin{inputDescription}
-\lipsum[1]
+La primera línea de la entrada contiene dos enteros $N$ y $S$, que corresponden respectivamente al número de plataformas y la plataforma donde se encuentra la espada ($1 \le S \le N$).
+Ociman siempre comienza en la plataforma número $1$.
+
+Las siguientes $N$ líneas describen a las plataformas en orden.
+Cada una de ellas contiene tres enteros $W$, $X$ e $Y$, que corresponden respectivamente al ancho de la plataforma, al extremo izquierdo de la plataforma y a la altura a la que se encuentra la plataforma.
 \end{inputDescription}
 
 \begin{outputDescription}
-\lipsum[1]
+Si Ociman puede llegar a la espada, entonces imprima una línea con un entero: el mínimo número de saltos que debe realizar para lograrlo. Si Ocimar no puede llegar a ella, imprima la palabra \verb-Inalcanzable- en una línea.
 \end{outputDescription}
 
 \begin{scoreDescription}
-  \score{10} Restricciones Subtarea1
-  \score{10} Restricciones Subtarea2
-  \score{10} Restricciones Subtarea3
+  % TBD distribución de puntajes
+  \score{10} $1 \le N \le 100$. Todas las plataformas tienen $W=Y=1$.
+  % Considerar caso donde es posible saltar entre plataforma i e i+2 sin tocar i+1 y similares. Considerar caso donde el salto es hacia la izquierda.
+  \score{10} $1 \le N \le 100$. Todas las plataformas tienen $W=1$.
+  % Debe considerar plataformas en ambos sentidos.
+  \score{10} $1 \le N \le 10$. Todas las plataformas tienen $1 \le W \le 10$.
+  % Puede probar desde cada X en la plataforma de origen a cada Y en la plataforma de destino (O(N^2 * W^2)).
+  \score{10} $1 \le N \le 1000$. Todas las plataformas tienen $1 \le W \le 1000$.
+  % Debe encontrar la menor distancia entre dos plataformas (O(N^2)).
 \end{scoreDescription}
 
 \begin{sampleDescription}
