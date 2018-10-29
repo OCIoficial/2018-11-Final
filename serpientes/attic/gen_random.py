@@ -18,11 +18,11 @@ random.seed(hash(str(sys.argv)))
             Assuming E[t_i] = 3.5, T should be something close to N*M/3.5 when S = 1
 """
 
-N = int(sys.argv[1])
-M = int(sys.argv[2])
-E = int(sys.argv[3])
-T = int(sys.argv[4])
-S = int(sys.argv[5])
+N = int(sys.argv[2])
+M = int(sys.argv[3])
+E = int(sys.argv[4])
+T = int(sys.argv[5])
+S = int(sys.argv[6])
 
 danger_noodles = {}  # Type: Dict[Tuple[int, int], Tuple[int, int]]
 real_sneks = {}

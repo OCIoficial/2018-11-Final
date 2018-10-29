@@ -13,23 +13,34 @@
 
 
 [Subtask 1]
-  # Use sample data as test
-  1 ; copy statement/sample-1.in
-  1 ; copy statement/sample-2.in
-
-  # Manual test case
-  2 ; copy attic/manual-1.in
-
-  # Random tests
-  3 ; random.cpp 10 100
-  3 ; random.cpp 100 1000
-
+  # No snek
+  no_snek ; gen_random.py 5 5 0 7 1
+  no_snek ; gen_random.py 10 10 0 25 1
+  no_snek ; gen_random.py 100 100 0 100 1
+  no_snek_angosto ; gen_random.py 1000 2 0 100 1
+  no_snek_angost ; gen_random.py 1000 1 0 100 1
 
 [Subtask 2]
-  # Random tests
-  1 ; random.java 10 20 30
-  1 ; random.java 20 30 40
+  # T*N*M < 10^6
+  sample ; copy statement/sample-1.in
+  sample ; copy statement/sample-2.in
+  smol ; gen_random.py 50 50 50 50 0
+  smol_escalas ; gen_random.py 50 50 50 50 2
+  smol ; gen_random.py 100 100 100 100 0
+  smol_escalas ; gen_random.py 100 100 100 100 2
+  smol_angosto ; gen_random.py 1000 4 100 100 0
+  smol_angosto_escalas ; gen_random.py 1000 4 100 100 2
+  smol_angosto ; gen_random.py 1000 1 100 100 0
+  smol_angosto_escalas ; gen_random.py 1000 1 100 100 2
 
   # More random tests
-  2 ; random.py 1 1000
-
+  big ; gen_random.py 1000 1000 5000 1000 0
+  big_escalas ; gen_random.py 1000 1000 1000 1000 2
+  big ; gen_random.py 987 789 5000 5000 0
+  big_escalas ; gen_random.py 987 789 5000 5000 2
+  big_angosto ; gen_random.py 1000000 4 5000 1000 0
+  big_angosto_escalas ; gen_random.py 1000000 4 5000 1000 2
+  big_angosto ; gen_random.py 1000000 2 5000 1000 0
+  big_angosto_escalas ; gen_random.py 1000000 2 5000 1000 2
+  big_angosto ; gen_random.py 1000000 1 5000 1000 0
+  big_angosto_escalas ; gen_random.py 1000000 1 5000 1000 2
