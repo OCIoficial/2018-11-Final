@@ -1,7 +1,7 @@
 import sys
 import random
 
-random.seed(hash(str(sys.argv)))
+random.seed(str(sys.argv))
 
 """
     Input format (for the test gen):
