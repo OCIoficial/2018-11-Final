@@ -6,31 +6,71 @@
 
 \begin{document}
 \begin{problemDescription}
-Investigadores de la Organización de Culturas Interesantes (OCI) descubren un antiguo texto escrito en un idioma ancestral. Con mucho esfuerzo logran identificar cada símbolo y caen en la cuenta de que el texto entero está escrito sin espacios.
+Recientemente, algunos científicos de la Organización de Culturas Indígenas
+(OCI) descubrieron una biblioteca con una basta colección de
+textos perteneciente a la cultura Chipotle.
+Estos textos están escritos en lo que pareciese ser Chipotle antiguo, un idioma
+ancestral y aún desconocido.
 
-Al parecer, la gente de esta cultura simplemente separaba sus frases por contexto. Por suerte, los investigadores encuentran otro texto que parece ser un diccionario. ¿puedes ayudarles a saber cuantas maneras hay de interpretar el texto como una secuencia de palabras del diccionario?
+Luego de estudiar los textos por algún tiempo, los científicos de la OCI notaron
+que ninguno de estos contiene espacios y por lo tanto es imposible determinar
+inmediatamente donde comienza y termina cada palabra.
+Al parecer, la ancestral cultura Chipotle separaba las palabras a partir del
+contexto.
 
-Por ejemplo, si el diccionario es \texttt{[am, ame, ames, amet, eta, es, mes, tames]}, entonces el texto \texttt{ametames} puede interpretarse de cuatro formas: 
+Para la suerte de los científicos, entre los textos también se encontró lo que
+parecía ser un diccionario con la lista de todas las palabras en el Chipotle
+antiguo.
+Usando este diccionario, pensaron los científicos, sería sencillo separar los
+textos en sus palabras constituyentes.
+
+Al poco tiempo, los científicos se dieron cuenta que incluso con la ayuda del
+diccionario aún puede haber muchas formas distintas de separar un texto en
+palabras.
+Por ejemplo, si el diccionario contiene las palabras \texttt{am, ame, ames,
+  amet, eta, es, mes} y  \texttt{tames}, entonces el texto \texttt{ametames}
+puede separarse en palabras de 4 formas distintas.
 
 $$\{\texttt{am eta mes},\ \ \  \texttt{ame tames},\ \ \  \texttt{amet ames},\ \ \  \texttt{amet am es}  \}$$
 
+% Otras separaciones como \texttt{am et ames} o \texttt{amet a mes} no son
+% válidas, pues no 
 
+Dependiendo de la cantidad de formas en que un texto puede separarse en palabras
+es posible que la estrategia aún pueda ser de utilidad.
+Es por esto que los científicos de la OCI están interesados en determinar de
+cuantas formas posibles puede un texto ser separado en una secuencia de palabras
+en el diccionario.
+`? Podrías ayudarlos?
 \end{problemDescription}
 
 \begin{inputDescription}
-La entrada consiste de un número variable de líneas. la primera línea contiene un entero $N \geq 1$ que describe el número de palabras del diccionario. Las siguiente $N$ líneas contienen una cadena de caractéres que representa una palabra del diccionario. El diccionario $\textbf{no}$ contrendrá palabras repetidas. Finalemente, la última línea de la entrada contiene una cadena de catacteres que codifica el texto a decodificar. 
+  La primera línea de la entrada contiene un entero $D$ ($0 < D \leq 100$) que
+  describe la cantidad de palabras en el diccionario.
+  A continuación, cada una de las siguientes $D$ líneas contiene una cadena de
+  caracteres correspondiente a una palabra en el diccionario.
+  El diccionario $\textbf{no}$ contendrá palabras repetidas y cada una de las
+  palabras tendrá largo al menos 1 y a lo más 10.
+  Finalmente, la última línea de la entrada contiene una cadena de caracteres de
+  largo $T$ ($0 < T \leq 10^5$) correspondiente al texto que quiere separase en palabras.
 
-Cada cadena de caracteres está compuesta por las letras $\texttt{a},\texttt{b},\dots,\texttt{z}$ (ASCII 097 a 122). Además, cada una tiene al menos un caracter y máximo $10^5$.
+  Tanto las palabras en el diccionario como el texto estarán formados
+  únicamente por caracteres en minúscula del alfabeto inglés (no contiene la ``ñ'').
 \end{inputDescription}
 
 \begin{outputDescription}
-Una línea conteniendo un entero con la cantidad de formas de interpretar el texto como una secuencia de palabras del diccionario.
+  La salida debe corresponder a un entero mayor o igual que 0 correspondiente a
+  la cantidad de formas en que puede separarse el texto como una secuencia de
+  palabras del diccionario.
+  Como este número puede ser muy grande se pide entregarlo módulo 1000009.
 \end{outputDescription}
 
 \begin{scoreDescription}
-  \score{20} Todas las palabras del diccionario son del mismo tamaño. 
-  \score{20} Las palabras del diccionario tienen largo máximo 10 y $N \leq 10$.
-  \score{60} $N \leq 100$
+  \score{20} Se probarán varios casos donde todas las palabras en el diccionario
+  tienen el mismo largo.
+  \score{35} Se probarán varios casos donde el tamaño del texto es menor o igual
+  que 100 ($T \leq 100$).
+  \score{45} Se probarán varios casos sin restricciones adicionales.
 \end{scoreDescription}
 
 \begin{sampleDescription}
