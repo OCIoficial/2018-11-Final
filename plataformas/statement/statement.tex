@@ -6,41 +6,40 @@
 
 \begin{document}
 \begin{problemDescription}
-Ociman debe escalar una montaña para conseguir una espada legendaria.
+Ociman está a cargo del centro de operaciones de la OCI, donde se coordina la final de la competencia y se revisan los problemas.
+Para llegar a este lugar sin ser visto, Ociman ha optado por usar un pogo stick, saltando de edificio en edificio por la ciudad (cuyo tamaño es de $N \times N$).
 
-En la ladera de la montaña, existe un conjunto de plataformas horizontales sobre las que Ociman puede caminar y entre las cuales puede saltar, siempre que sea capaz de alcanzarlas.
+Para simplificar el problema, Ociman ha determinado que saltará de edificio en edificio, donde visto desde arriba, cada edificio es de tamaño $1 \times 1$, hasta llegar al edificio de la OCI.
+Sin embargo, los saltos de Ociman están limitados por una distancia $d$: con cada salto puede moverse hasta $d$ hacia el norte, $d$ hacia el sur, $d$ hacia el oeste y $d$ hacia el este.
+
 % TODO dibujo que muestre un set de plataformas simples, que coincida con uno de los ejemplos de entrada/salida.
-Ociman puede saltar de la plataforma $i$ a altura $h_i$ a la plataforma $j$ a altura $h_j$ si:
-$$h_i - h_j \ge 25-(x-5)^2$$
-donde $x$ es la distancia horizontal entre plataformas.
-% TODO considerar la opción de entregarles una función que dado dx retorna el máximo dy.
-% Vista de la función en https://www.wolframalpha.com/input/?i=25+-+(%7Cx%7C-5)%5E2
-¿Puede llegar Ociman a la espada? De ser así, ¿cuántos saltos debe realizar Ociman para llegar a la espada legendaria?
+
+¿Podrá Ociman llegar al edificio de la OCI o deberá buscar otro plan?
+Si puede, cuál es el número mínimo de saltos que debe realizar para llegar a éste?
 
 \end{problemDescription}
 
 \begin{inputDescription}
-La primera línea de la entrada contiene dos enteros $N$ y $S$, que corresponden respectivamente al número de plataformas y la plataforma donde se encuentra la espada ($1 \le S \le N$).
-Ociman siempre comienza en la plataforma número $1$.
+La primera línea de la entrada dos enteros $N$ y $d$, que corresponden respectivamente a las dimensiones de la ciudad ($1 < N$) y la distancia máxima que puede saltar Ociman ($1 \le d \le N - 1$).
 
-Las siguientes $N$ líneas describen a las plataformas en orden.
-Cada una de ellas contiene tres enteros $W$, $X$ e $Y$, que corresponden respectivamente al ancho de la plataforma, al extremo izquierdo de la plataforma y a la altura a la que se encuentra la plataforma.
+La segunda línea contiene dos enteros $U$ y $V$, que corresponden a las coordenadas de la posición inicial de Ociman ($1 \le U, V \le N$).
+
+La tercera línea contiene dos enteros $X$ e $Y$, que corresponden a las coordenadas del edificio de la OCI ($1 \le X, Y \le N$).
+
+Las siguientes $N$ líneas describen la ciudad.
+Cada una de ellas contiene $N$ números $B_{i,j}$ separados por espacios, donde $B_{i,j}$ es el $j$-ésimo número de la $i$-ésima línea.
+$B_{i,j}$ es 1 si hay un edificio donde Ociman puede saltar, y 0 si no.
+Se garantiza que siempre tanto $B_{U,V}$ como $B_{X,Y}$ son 1.
 \end{inputDescription}
 
 \begin{outputDescription}
-Si Ociman puede llegar a la espada, entonces imprima una línea con un entero: el mínimo número de saltos que debe realizar para lograrlo. Si Ocimar no puede llegar a ella, imprima la palabra \verb-Inalcanzable- en una línea.
+Si Ociman puede llegar al edificio de la OCI en pogo stick, imprima una línea con un entero: el mínimo número de saltos que debe realizar para lograrlo. Si Ociman no puede llegar a él, imprima la palabra \verb-Inalcanzable- en una línea.
 \end{outputDescription}
 
 \begin{scoreDescription}
   % TBD distribución de puntajes
-  \score{10} $1 \le N \le 100$. Todas las plataformas tienen $W=Y=1$.
-  % Considerar caso donde es posible saltar entre plataforma i e i+2 sin tocar i+1 y similares. Considerar caso donde el salto es hacia la izquierda.
-  \score{10} $1 \le N \le 100$. Todas las plataformas tienen $W=1$.
-  % Debe considerar plataformas en ambos sentidos.
-  \score{10} $1 \le N \le 10$. Todas las plataformas tienen $1 \le W \le 10$.
-  % Puede probar desde cada X en la plataforma de origen a cada Y en la plataforma de destino (O(N^2 * W^2)).
-  \score{10} $1 \le N \le 1000$. Todas las plataformas tienen $1 \le W \le 1000$.
-  % Debe encontrar la menor distancia entre dos plataformas (O(N^2)).
+  \score{10} $1 \le N \le ?$. $B_{i,j}$ es siempre 1.
+  \score{10} $1 \le N \le ?$. No hay restricciones adicionales.
 \end{scoreDescription}
 
 \begin{sampleDescription}
