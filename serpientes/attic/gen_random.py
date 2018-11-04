@@ -1,8 +1,7 @@
-import sys
 import random
+import sys
 
 random.seed(str(sys.argv))
-
 """
     Input format (for the test gen):
         N -- rows
@@ -28,6 +27,7 @@ danger_noodles = {}  # Type: Dict[Tuple[int, int], Tuple[int, int]]
 real_sneks = {}
 turns = []
 current = (0, 0)
+
 
 def get_position(dice):
     # Type: (int) -> List[int]
@@ -66,7 +66,7 @@ def get_position(dice):
         current = (-1, -1)
 
 
-def get_new_snek(Nlimit=2, Mlimit=0):
+def get_new_snek():
     global current
     global turns
     global current
@@ -76,7 +76,7 @@ def get_new_snek(Nlimit=2, Mlimit=0):
     while True:
         # By default we don't create sneks in the last row, this is to avoid reaching the end
         # of the board
-        new_snek = (random.randint(0, N - Nlimit), random.randint(0, M - Mlimit))
+        new_snek = (random.randint(0, N - 2), random.randint(0, M - 1))
         if new_snek not in danger_noodles:
             break
         c += 1
@@ -86,6 +86,7 @@ def get_new_snek(Nlimit=2, Mlimit=0):
             new_snek = (-1, -1)
             break
     return new_snek
+
 
 def gen_sneks():
     global current
@@ -108,6 +109,7 @@ def gen_sneks():
             current = new_snek
         if current == (N - 1, M - 1):
             current = (-1, -1)
+
 
 def gen_boring():
     global current

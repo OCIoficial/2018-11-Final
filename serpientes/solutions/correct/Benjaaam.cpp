@@ -9,7 +9,7 @@ using namespace std;
 #define y second
 
 pair<int, int > move(map<pair<int, int>, pair<int, int > > &snek, pair<int, int> current, int N, int M, int dice){
-    if(current.x == -1) return {-1, -1};
+    if(current.x < 0) return {-1, -1};
     while(dice > 0){
         if(current.y % 2 == 0){
             if(current.x + dice < M){
@@ -46,6 +46,10 @@ pair<int, int > move(map<pair<int, int>, pair<int, int > > &snek, pair<int, int>
     return current;
 }
 
+pair<int, int> final_pos(int N, int M) {
+    return N % 2 == 0 ? make_pair(0, N-1) : make_pair(M-1, N-1);
+}
+
 int main(){
     int N, M, S, T;
     cin >> N >> M >> S;
@@ -65,7 +69,8 @@ int main(){
     for(int i = 0; i < T; i++){
         current = move(snek, current, N, M, turns[i]);
         if(current.x == -1){
-            cout << M - 1 << " " << N - 1 << endl;
+            auto pos = final_pos(N, M);
+            cout << pos.y << " " << pos.x << endl;
             return 0;
         }
     }
