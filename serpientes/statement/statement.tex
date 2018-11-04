@@ -86,13 +86,15 @@
   cantidad de escaleras y serpientes.
   Cada una de las siguientes $E$ líneas describe uno de los objetos en el
   tablero (escaleras o serpientes).
-  Cada objeto está descrito con cuatro enteros $a, b, c$ y $d$ representando que
-  el objeto comienza en la casilla $(a, b)$ y termina en la casilla $(c, d)$.
+  Cada objeto está descrito con cuatro enteros $a, b, c$ y $d$ ($0 \leq a, c
+  \leq M, 0 \leq b, d \leq N$)
+  representando que el objeto comienza en la casilla $(a, b)$ y termina en la
+  casilla $(c, d)$.
   No habrán nunca dos objetos que comiencen en la misma casilla y un objeto
   nunca comenzará en la casilla que termina otro.
 
-  A continuación viene una línea con un entero $T$ conteniendo la cantidad de
-  turnos.
+  A continuación viene una línea con un entero $T$ ($T > 0$) conteniendo la
+  cantidad de turnos.
   Finalmente, la última línea contiene $T$ enteros mayores o iguales que 1 y
   menores o iguales 6, correspondientes al resultado del dado en cada turno.
 \end{inputDescription}
