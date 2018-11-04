@@ -12,7 +12,7 @@
 # To generate test cases using test plan use `ocimatic gen-input`
 
 
-[Subtask 1]
+[Subtask 1 - validators/st1.cpp]
   # Random tests
   1     ; gen_random.py 2 30 2 1 0 1 ab
   1     ; gen_random.py 1 100 3 1 0 1 abc
@@ -24,10 +24,10 @@
   1     ; gen_random.py 6 7 2 7 0 0 ab
   1     ; gen_random.py 2 9999 4 1 1 0 ab
   1     ; gen_random.py 3 98 2 1 1 0 ab
-  1     ; gen_random.py 3 11 60 1 0 0 ab
+  1     ; gen_random.py 3 100 60 1 0 0 ab
   1     ; gen_random.py 5 23 23 1 0 0 ab
 
-[Subtask 2]
+[Subtask 2 - validators/st2.cpp]
   # Random tests
   1     ; gen_random.py 10 100 20 0 0 1 ab
   1     ; gen_random.py 1 100 3 0 0 1 abc
@@ -42,7 +42,7 @@
   1     ; gen_random.py 4 100 20 0 0 0 ab
   1     ; gen_random.py 5 100 20 0 0 0 ab
 
-[Subtask 3]
+[Subtask 3 - validators/st3.cpp]
   # Random tests
   1     ; gen_random.py 100 10000 100 0 0 1 ab
   1     ; gen_random.py 60 10000 100 0 0 1 abc
