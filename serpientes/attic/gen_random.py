@@ -101,6 +101,8 @@ def gen_sneks():
         if current not in danger_noodles and len(real_sneks) < E:
             # Make a new snek
             new_snek = get_new_snek()
+            while new_snek == current:
+                new_snek = get_new_snek()
             if new_snek[0] != -1:
                 danger_noodles[current] = new_snek
                 real_sneks[current] = new_snek
@@ -137,6 +139,8 @@ def gen_random():
             if bool(random.getrandbits(1)):
                 # Make a snek here
                 new_snek = get_new_snek()
+                while new_snek == current:
+                    new_snek = get_new_snek()
                 if new_snek != (-1, -1):
                     danger_noodles[current] = new_snek
                     real_sneks[current] = new_snek
@@ -151,8 +155,10 @@ def add_noise():
     global real_sneks
     for _ in range(E - len(real_sneks)):
         for i in range(20):
-            start = get_new_snek()
-            end = get_new_snek()
+            start = end = None
+            while start == end:
+                start = get_new_snek()
+                end = get_new_snek()
             if i == 19:
                 # Not gonna happen :(
                 return

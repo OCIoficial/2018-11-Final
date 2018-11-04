@@ -22,6 +22,7 @@ int main() {
     inf.readSpace();
     int d = inf.readInt(0, N - 1, "d");
     inf.readEoln();
+    ensuref(a != c or b != d, "Un objeto no puede empezar donde termina");
     ensuref(start.count({a, b}) == 0, "Dos objetos no pueden empezar en la misma posición");
     ensuref(end.count({a, b}) == 0, "Un objeto no pueden empezar donde termina otro");
     start.insert({a, b});
