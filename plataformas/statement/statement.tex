@@ -1,39 +1,88 @@
 \documentclass{oci}
 \usepackage[utf8]{inputenc}
 \usepackage{lipsum}
+\usepackage{tikz}
+\usetikzlibrary{shapes}
 
 \title{Plataformas}
 
 \begin{document}
 \begin{problemDescription}
-Ociman está a cargo del centro de operaciones de la OCI, donde se coordina la final de la competencia y se revisan los problemas.
-Para llegar a este lugar sin ser visto, Ociman ha optado por usar un pogo stick, saltando de edificio en edificio por la ciudad (cuyo tamaño es de $N \times N$).
+Ociman está a cargo del centro de operaciones de la OCI, donde se coordina la
+final de la competencia y se revisan los problemas.
+Para llegar a su destino sin ser visto, Ociman ha decidido usar un pogo stick,
+saltando de edificio en edificio.
 
-Para simplificar el problema, Ociman ha determinado que saltará de edificio en edificio, donde visto desde arriba, cada edificio es de tamaño $1 \times 1$, hasta llegar al edificio de la OCI.
-Sin embargo, los saltos de Ociman están limitados por una distancia $d$: con cada salto puede moverse hasta $d$ hacia el norte, $d$ hacia el sur, $d$ hacia el oeste y $d$ hacia el este.
+Vista desde arriba, la ciudad puede describirse como una grilla de $N\times N$
+edificios.
+Las filas y columnas son numeradas de norte a sur y de oeste a este con números
+entre 1 y $N$.
+Muchos de los edificios tienen techos irregulares y por lo tanto Ociman no
+puede saltar sobre ellos.
+Adicionalmente, Ociman tiene un límite de distancia para sus saltos y cada vez
+que salta solo puede moverse a lo más $d$ edificios tanto horizontal como
+verticalmente.
 
-% TODO dibujo que muestre un set de plataformas simples, que coincida con uno de los ejemplos de entrada/salida.
+La siguiente imagen muestra un ejemplo para $N=6$ y $d=2$.
+Los edificios sobre los cual Ociman \textbf{no} puede saltar están marcados con
+una cruz.
+Ociman está representado con un círculo y se encuentra en la coordenada $(3, 5)$.
+El cuadrado en gris representa el área que Ociman puede alcanzar en un salto
+estando en esa posición.
+Dentro de ese área Ociman puede saltar a cualquier edificio que no está marcado
+con una cruz.
 
+\begin{center}
+  \begin{tikzpicture}[square/.style={regular polygon,regular polygon sides=4}]
+    \draw [fill, lightgray] (-0.39, -1.39) rectangle +(4.78, 4.78);
+    \foreach \i in {0,...,5} {
+      \foreach \j in {0,...,5} {
+        \node at (\i, \j) [rectangle, draw, scale=3] {};
+      }
+    }
+    \foreach \i in {1,...,6} {
+      \node at(\i-1, 5.6) {\tiny\i};
+      \node at(-0.6, 6-\i) {\tiny\i};
+    }
+    \foreach \p in {(0,1), (2, 2), (4, 1), (4, 4), (3, 0), (1, 3), (2, 5)} {
+      \node [cross out, draw, scale=2.9] at \p {};
+    }
+    \node [circle, fill, scale=0.5] at (2, 1) {};
+  \end{tikzpicture}
+\end{center}
+
+Inicialmente Ociman comienza en el edificio en las coordenadas $(U, V)$ y tiene
+que llegar al edificio en las coordenadas $(X, Y)$.
 ¿Podrá Ociman llegar al edificio de la OCI o deberá buscar otro plan?
-Si puede, cuál es el número mínimo de saltos que debe realizar para llegar a éste?
-
+En caso de ser posible, ?`cuál es el número mínimo de saltos que debe realizar
+para llegar? 
 \end{problemDescription}
 
 \begin{inputDescription}
-La primera línea de la entrada dos enteros $N$ y $d$, que corresponden respectivamente a las dimensiones de la ciudad ($1 < N$) y la distancia máxima que puede saltar Ociman ($1 \le d \le N - 1$).
+La primera línea de la entrada contiene dos enteros $N$ y $d$, que corresponden
+respectivamente a las dimensiones de la ciudad ($1 < N$) y la distancia máxima
+que puede saltar Ociman ($1 \le d < N$).
 
-La segunda línea contiene dos enteros $U$ y $V$, que corresponden a las coordenadas de la posición inicial de Ociman ($1 \le U, V \le N$).
+La segunda línea contiene dos enteros $U$ y $V$, que corresponden a las
+coordenadas de la posición inicial de Ociman ($1 \le U, V \le N$). 
 
-La tercera línea contiene dos enteros $X$ e $Y$, que corresponden a las coordenadas del edificio de la OCI ($1 \le X, Y \le N$).
+La tercera línea contiene dos enteros $X$ e $Y$, que corresponden a las
+coordenadas del edificio de la OCI ($1 \le X, Y \le N$). 
 
 Las siguientes $N$ líneas describen la ciudad.
-Cada una de ellas contiene $N$ números $B_{i,j}$ separados por espacios, donde $B_{i,j}$ es el $j$-ésimo número de la $i$-ésima línea.
-$B_{i,j}$ es 1 si hay un edificio donde Ociman puede saltar, y 0 si no.
-Se garantiza que siempre tanto $B_{U,V}$ como $B_{X,Y}$ son 1.
+Cada una de ellas contiene $N$ enteros.
+El $i$-ésimo entero en la línea $j$-ésima contendrá un 1 si Ociman puede saltar
+sobre el edificio en las coordenadas $(i, j)$ o 0 en caso contrario.
+Se garantiza que tanto las coordenadas de la posición inicial de Ociman y las
+coordenadas del edificio de la OCI tendrán edificios sobre los cuales se
+puede saltar.
 \end{inputDescription}
 
 \begin{outputDescription}
-Si Ociman puede llegar al edificio de la OCI en pogo stick, imprima una línea con un entero: el mínimo número de saltos que debe realizar para lograrlo. Si Ociman no puede llegar a él, imprima la palabra \verb-Inalcanzable- en una línea.
+Si Ociman puede llegar al edificio de la OCI, la entrada debe consistir
+en un entero correspondiente al mínimo número de saltos que debe realizar para
+lograrlo.
+En caso contrarió, la salida de contener la palabra \verb-Inalcanzable-.
 \end{outputDescription}
 
 \begin{scoreDescription}
