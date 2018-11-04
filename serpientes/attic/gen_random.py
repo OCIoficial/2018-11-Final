@@ -1,4 +1,4 @@
-import sy
+import sys
 import random
 
 random.seed(str(sys.argv))
@@ -66,10 +66,11 @@ def get_position(dice):
         current = (-1, -1)
 
 
-def get_new_snek(Nlimit=1, Mlimit=0):
+def get_new_snek(Nlimit=2, Mlimit=0):
     global current
     global turns
     global current
+    assert N > 2, 'N tiene que ser mayor que 2 para tener serpientes'
     c = 0
     new_snek = (-1, -1)
     while True:
@@ -91,7 +92,7 @@ def gen_sneks():
     global turns
     global current
     global real_sneks
-    turns = [random.randint(1, 7) for _ in range(T)]
+    turns = [random.randint(1, 6) for _ in range(T)]
     for turn in turns:
         get_position(turn)
         if current == (-1, -1):
@@ -112,7 +113,7 @@ def gen_boring():
     global current
     global turns
     global current
-    turns = [random.randint(1, 7) for _ in range(T)]
+    turns = [random.randint(1, 6) for _ in range(T)]
     for turn in turns:
         get_position(turn)
         if current == (-1, -1):
@@ -125,7 +126,7 @@ def gen_random():
     global turns
     global current
     global real_sneks
-    turns = [random.randint(1, 7) for _ in range(T)]
+    turns = [random.randint(1, 6) for _ in range(T)]
     for turn in turns:
         get_position(turn)
         if current == (-1, -1):
@@ -157,6 +158,8 @@ def add_noise():
                 return
             break
         real_sneks[start] = end
+        danger_noodles[start] = end
+        danger_noodles[end] = start
 
 
 if S == 1:
