@@ -1,4 +1,4 @@
-import sys
+import sy
 import random
 
 random.seed(str(sys.argv))
