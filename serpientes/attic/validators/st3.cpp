@@ -14,13 +14,13 @@ int main() {
   set<pair<int, int>> start;
   set<pair<int, int>> end;
   for (int i = 0; i < E; ++i) {
-    int a = inf.readInt(0, M, "a");
+    int a = inf.readInt(0, M - 1, "a");
     inf.readSpace();
-    int b = inf.readInt(0, N, "b");
+    int b = inf.readInt(0, N - 1, "b");
     inf.readSpace();
-    int c = inf.readInt(0, M, "c");
+    int c = inf.readInt(0, M - 1, "c");
     inf.readSpace();
-    int d = inf.readInt(0, N, "d");
+    int d = inf.readInt(0, N - 1, "d");
     inf.readEoln();
     ensuref(start.count({a, b}) == 0, "Dos objetos no pueden empezar en la misma posición");
     ensuref(end.count({a, b}) == 0, "Un objeto no pueden empezar donde termina otro");
