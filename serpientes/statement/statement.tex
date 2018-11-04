@@ -3,6 +3,7 @@
 \usepackage{lipsum}
 \usepackage{tikz}
 \usetikzlibrary{calc}
+\usepackage{subcaption}
 
 \title{Escaleras y Serpientes}
 
@@ -23,7 +24,7 @@
   imagen de abajo, es quién gana el juego.
 
   \begin{center}
-  \includegraphics[scale=0.8]{tablero}
+  \includegraphics[scale=0.7]{tablero}
   \end{center}
 
   Por motivo del aniversario del juego, algunos desarrolladores está intentando
@@ -34,43 +35,50 @@
   las columnas de izquierda a derecha entre 0 y $N-1$.
   Cada casilla del tablero puede identificarse con un par $(a, b)$ donde $a$
   corresponde a su fila y $b$ a su columna.
-  La figura que se ve a continuación muestra la forma de identificar cada
-  casilla en un tablero de 4 filas por 5 columnas.
-  Las casillas se recorren de la misma forma que en el juego original avanzando
+  La figura de la izquierda que se ve a continuación muestra la forma de
+  identificar cada casilla en un tablero de 4 filas por 5 columnas.
+  Las casillas se recorren de la misma forma que en el juego original, avanzando
   hacia la derecha en las filas pares y hacia la izquierda en las impares.
+  Esto último puede apreciarse en la figura de la derecha.
 
-  \begin{center}
-    \begin{tikzpicture}[scale = 0.6]
-      \foreach \i in {0,...,4}{
-        \foreach \j in {0,...,3}{
-          \draw (1.5*\i,1.5*\j) rectangle +(1.5,1.5);
-          \node at (1.5*\i + 0.75,1.5*\j + 0.75) [rotate=10] {\scalebox{0.7}{$(\j, \i)$}};
+  \begin{figure}
+    \centering
+    \begin{subfigure}{0.45\textwidth}
+      \centering
+      \begin{tikzpicture}[scale = 0.6]
+        \foreach \i in {0,...,4}{
+          \foreach \j in {0,...,3}{
+            \draw (1.5*\i,1.5*\j) rectangle +(1.5,1.5);
+            \node at (1.5*\i + 0.75,1.5*\j + 0.75) [rotate=10] {\scalebox{0.7}{$(\j, \i)$}};
+          }
         }
-      }
-    \end{tikzpicture}
-    ~
-    \begin{tikzpicture}[scale = 0.6]
-      \foreach \i in {0,...,4}{
-        \foreach \j in {0,...,3}{
-          \draw (1.5*\i,1.5*\j) rectangle +(1.5,1.5);
-          \node at (1.5*\i + 1.2,1.5*\j + 0.3) {
-            \tiny
-            \pgfmathparse{Mod(\j,2)==0?1:0}
-            \ifnum\pgfmathresult>0
-                \pgfmathtruncatemacro\result{\j*5+\i+1}\result
-            \else
-                \pgfmathtruncatemacro\result{\j*5-\i+5}\result
-            \fi
-          };
+      \end{tikzpicture}
+    \end{subfigure}
+    \begin{subfigure}{0.45\textwidth}
+      \centering
+      \begin{tikzpicture}[scale = 0.6]
+        \foreach \i in {0,...,4}{
+          \foreach \j in {0,...,3}{
+            \draw (1.5*\i,1.5*\j) rectangle +(1.5,1.5);
+            \node at (1.5*\i + 1.2,1.5*\j + 0.3) {
+              \tiny
+              \pgfmathparse{Mod(\j,2)==0?1:0}
+              \ifnum\pgfmathresult>0
+              \pgfmathtruncatemacro\result{\j*5+\i+1}\result
+              \else
+              \pgfmathtruncatemacro\result{\j*5-\i+5}\result
+              \fi
+            };
+          }
         }
-      }
-      \draw [->, thick]
-              (0.75, 0.75) -- (6.75, 0.75) --
-              (6.75, 2.25) -- (0.75, 2.25) --
-              (0.75, 3.75) -- (6.75, 3.75) --
-              (6.75, 5.25) -- (0.75, 5.25);
-    \end{tikzpicture}
-  \end{center}
+        \draw [->, thick]
+        (0.75, 0.75) -- (6.75, 0.75) --
+        (6.75, 2.25) -- (0.75, 2.25) --
+        (0.75, 3.75) -- (6.75, 3.75) --
+        (6.75, 5.25) -- (0.75, 5.25);
+      \end{tikzpicture}
+    \end{subfigure}
+  \end{figure}
 
   Los desarrolladores llevan gran parte del juego programado pero están teniendo
   problemas con el módulo que mantiene actualizada la posición de cada ficha.
@@ -104,6 +112,8 @@
 \begin{outputDescription}
   La salida debe contener una línea con dos enteros correspondientes a la
   columna y fila, de la posición donde termina el jugador.
+  Si en cualquier momento el jugador se pasa por sobre la última casilla el
+  juego se detiene automáticamente y el resto de los dados deben ignorarse.
 \end{outputDescription}
 
 \begin{scoreDescription}

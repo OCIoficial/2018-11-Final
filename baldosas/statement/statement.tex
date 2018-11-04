@@ -3,7 +3,7 @@
 \usepackage{lipsum}
 \usepackage{tikz}
 
-\title{Ejemplo}
+\title{Gastón y las baldosas de su cocina}
 
 \begin{document}
 \begin{problemDescription}
@@ -16,21 +16,21 @@
   La cocina en la nueva casa de Gastón es de $M$ centímetros de largo y $N$
   centímetros de ancho.
   Las baldosas que desea comprar son de $a$ centímetros de largo y $b$ de ancho.
-  Para poder embaldosar la cocina Gastón debe partir poniendo una baldosa en una
+  Para poder embaldosar la cocina, Gastón debe partir poniendo una baldosa en una
   de las esquinas y continuar poniendo baldosas una al lado de la otra hasta
   completar una fila.
-  Si la última baldosa en la fila no cabe completamente puede cortarla para
+  Si la última baldosa en la fila no cabe completamente debe cortarla para
   poder llenar el espacio faltante.
   Luego de completar una fila puede seguir con la siguiente.
-  Al llegar a la última fila, si las baldosa no caben completamente, puede
+  Al llegar a la última fila, si las baldosa no caben completamente, debe
   también cortar las baldosas que pondrá en esa fila.
   Gastón está interesado en saber cuantas baldosas necesitará para poder cubrir
-  completamente el piso de la cocina.
+  completamente el piso de su cocina.
 
   La siguiente figura muestra un ejemplo con una cocina de 14 por 7 centímetros,
   y baldosas de 3 por 2 centímetros.
   Como puede apreciarse, en este caso es necesario un total de 20 baldosas para
-  poder cubrir todo el piso.
+  poder cubrir completamente el piso.
   \begin{center}
     \begin{tikzpicture}[scale=0.5]
       \draw [lightgray, fill=lightgray] (0, 0) rectangle (14, 7);
@@ -57,7 +57,7 @@
   La primera línea de la entrada contiene dos enteros $M$ y $N$ ($0 < M, N \leq
   10000$), correspondientes respectivamente al largo y ancho de la cocina en
   centímetros.
-  La siguiente línea contiene dos enteros $a$ y $b$ ($0 < M, N \leq 100$)
+  La siguiente línea contiene dos enteros $a$ y $b$ ($0 < a, b \leq 100$)
   correspondiente al largo y ancho de la baldosa en centímetros.
 \end{inputDescription}
 

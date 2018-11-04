@@ -28,20 +28,22 @@ Al poco tiempo, los científicos se dieron cuenta que dado un texto y un
 diccionario puede haber muchas formas de separar el texto en una secuencia de
 palabras en el diccionario.
 Por ejemplo, si el diccionario contiene las palabras \texttt{am, ame, ames,
-  amet, eta, es, mes} y \texttt{tames}, entonces el texto \texttt{ametames}
-puede separarse en palabras pertenecientes al diccionario de 4 formas distintas.
+  amet, eta, es, mes} y \texttt{tames}, el texto \texttt{ametames}
+puede separarse en palabras contenidas en el diccionario de 4 formas distintas.
 
-$$\{\texttt{am eta mes},\ \ \  \texttt{ame tames},\ \ \  \texttt{amet ames},\ \ \  \texttt{amet am es}  \}$$
+\begin{center}
+\{\texttt{am eta mes},\ \ \  \texttt{ame tames},\ \ \  \texttt{amet ames},\ \ \  \texttt{amet am es}  \}
+\end{center}
 
 % Otras separaciones como \texttt{am et ames} o \texttt{amet a mes} no son
 % válidas, pues no 
 
 Dependiendo de la cantidad de formas en que un texto puede separarse puede que
-valga la pena intentarlo.
+valga la pena intentarlo hacerlo.
 Es por esto que los científicos de la OCI están interesados en determinar de
-cuantas formas posibles puede un texto ser separado en una secuencia de palabras
+cuántas formas posibles puede un texto ser separado en una secuencia de palabras
 en el diccionario.
-`? Podrías ayudarlos?
+?`Podrías ayudarlos?
 \end{problemDescription}
 
 \begin{inputDescription}
@@ -64,7 +66,8 @@ en el diccionario.
   La salida debe corresponder a un entero mayor o igual que 0 correspondiente a
   la cantidad de formas en que puede separarse el texto como una secuencia de
   palabras en el diccionario.
-  Como este número puede ser muy grande se pide entregarlo módulo 1000009.
+  Como este número puede ser muy grande se pide entregar el resto de dividirlo
+  por 1000009.
 \end{outputDescription}
 
 \begin{scoreDescription}
