@@ -6,9 +6,9 @@
 
 \begin{document}
 \begin{problemDescription}
-Tras una larga búsqueda, algunos científicos de la Organización de Culturas
+Tras una larga búsqueda, los científicos de la Organización de Culturas
 Indígenas (OCI) han podido finalmente encontrar las ruinas de una antigua
-biblioteca que se consideraba perdida.
+biblioteca considerada hasta el momento perdida.
 Entre las ruinas encontraron una basta colección de textos pertenecientes a la
 cultura Chipotle, escritos en lo que pareciese ser Chipotle antiguo, un idioma
 ancestral y aún desconocido.
@@ -29,7 +29,7 @@ diccionario puede haber muchas formas de separar el texto en una secuencia de
 palabras en el diccionario.
 Por ejemplo, si el diccionario contiene las palabras \texttt{am, ame, ames,
   amet, eta, es, mes} y \texttt{tames}, entonces el texto \texttt{ametames}
-puede separarse en palabras de 4 formas distintas.
+puede separarse en palabras pertenecientes al diccionario de 4 formas distintas.
 
 $$\{\texttt{am eta mes},\ \ \  \texttt{ame tames},\ \ \  \texttt{amet ames},\ \ \  \texttt{amet am es}  \}$$
 
@@ -37,7 +37,7 @@ $$\{\texttt{am eta mes},\ \ \  \texttt{ame tames},\ \ \  \texttt{amet ames},\ \ 
 % válidas, pues no 
 
 Dependiendo de la cantidad de formas en que un texto puede separarse puede que
-la estrategia aún sea de utilidad.
+valga la pena intentarlo.
 Es por esto que los científicos de la OCI están interesados en determinar de
 cuantas formas posibles puede un texto ser separado en una secuencia de palabras
 en el diccionario.
@@ -52,16 +52,18 @@ en el diccionario.
   El diccionario $\textbf{no}$ contendrá palabras repetidas y cada una de las
   palabras tendrá largo al menos 1 y a lo más 10.
   Finalmente, la última línea de la entrada contiene una cadena de caracteres de
-  largo $T$ ($0 < T \leq 10^5$) correspondiente al texto que quiere separase en palabras.
+  largo $T$ ($0 < T \leq 10^5$) correspondiente al texto que quiere separase en
+  palabras.
 
   Tanto las palabras en el diccionario como el texto estarán formados
-  únicamente por caracteres en minúscula del alfabeto inglés (no contiene la ``ñ'').
+  únicamente por caracteres en minúscula del alfabeto inglés (no contiene la
+  ``ñ'').
 \end{inputDescription}
 
 \begin{outputDescription}
   La salida debe corresponder a un entero mayor o igual que 0 correspondiente a
   la cantidad de formas en que puede separarse el texto como una secuencia de
-  palabras del diccionario.
+  palabras en el diccionario.
   Como este número puede ser muy grande se pide entregarlo módulo 1000009.
 \end{outputDescription}
 
@@ -76,6 +78,7 @@ en el diccionario.
 \begin{sampleDescription}
 \sampleIO{sample-1}
 \sampleIO{sample-2}
+\sampleIO{sample-3}
 \end{sampleDescription}
 
 \end{document}
