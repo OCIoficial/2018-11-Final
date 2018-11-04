@@ -151,12 +151,13 @@ def add_noise():
         for i in range(20):
             start = get_new_snek()
             end = get_new_snek()
-            if start == (-1, -1) or end == (-1, -1):
-                continue
             if i == 19:
                 # Not gonna happen :(
                 return
-            break
+            if start == (-1, -1) or end == (-1, -1):
+                continue
+            else:
+                break
         real_sneks[start] = end
         danger_noodles[start] = end
         danger_noodles[end] = start
