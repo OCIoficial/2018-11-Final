@@ -18,29 +18,39 @@
   no_snek ; gen_random.py 10 10 0 25 1
   no_snek ; gen_random.py 100 100 0 100 1
   no_snek_angosto ; gen_random.py 1000 2 0 100 1
-  no_snek_angost ; gen_random.py 1000 1 0 100 1
+  no_snek_angost ; gen_random.py 1000 2 0 100 1
+  no_snek_angost ; gen_random.py 1000 1000 0 100 1
 
 [Subtask 2]
-  # T*N*M < 10^6
+  # E < 100 y T < 10^4
   sample ; copy statement/sample-1.in
   sample ; copy statement/sample-2.in
   smol ; gen_random.py 50 50 50 50 0
   smol_escalas ; gen_random.py 50 50 50 50 2
   smol ; gen_random.py 100 100 100 100 0
   smol_escalas ; gen_random.py 100 100 100 100 2
-  smol_angosto ; gen_random.py 1000 4 100 100 0
-  smol_angosto_escalas ; gen_random.py 1000 4 100 100 2
-  smol_angosto ; gen_random.py 1000 1 100 100 0
-  smol_angosto_escalas ; gen_random.py 1000 1 100 100 2
+  smol_angosto ; gen_random.py 1000 2 100 100 0
+  smol_angosto_escalas ; gen_random.py 1000 2 100 100 2
+  smol_angosto ; gen_random.py 1000 1000 100 100 0
+  smol_angosto_escalas ; gen_random.py 1000 1000 100 100 2
 
-  # More random tests
+ [Subtaks 3]
+  # E < 5000 y T < 10^5
   big ; gen_random.py 1000 1000 5000 1000 0
-  big_escalas ; gen_random.py 1000 1000 1000 1000 2
-  big ; gen_random.py 987 789 5000 5000 0
-  big_escalas ; gen_random.py 987 789 5000 5000 2
-  big_angosto ; gen_random.py 1000000 4 5000 1000 0
-  big_angosto_escalas ; gen_random.py 1000000 4 5000 1000 2
-  big_angosto ; gen_random.py 1000000 2 5000 1000 0
-  big_angosto_escalas ; gen_random.py 1000000 2 5000 1000 2
-  big_angosto ; gen_random.py 1000000 1 5000 1000 0
-  big_angosto_escalas ; gen_random.py 1000000 1 5000 1000 2
+  big ; gen_random.py 1000 1000 5000 1000 2
+  big ; gen_random.py 987 789 5000 80000 0
+  big ; gen_random.py 987 789 5000 80765 2
+  big ; gen_random.py 1000 2 5000 1000 0
+  big ; gen_random.py 1000 2 5000 1000 2
+  big ; gen_random.py 1000 1000 5000 100000 0
+  big ; gen_random.py 1000 1000 5000 100000 2
+  big ; gen_random.py 1000 1000 4999 100000 0
+  big ; gen_random.py 1000 1000 4999 100000 2
+  big ; gen_random.py 1000 1000 5000 99999 0
+  big ; gen_random.py 1000 1000 5000 99999 2
+  big ; gen_random.py 1000 1000 4999 99999 0
+  big ; gen_random.py 1000 1000 4999 99999 2
+  big ; gen_random.py 999 1000 5000 100000 0
+  big ; gen_random.py 999 1000 5000 100000 2
+  big ; gen_random.py 1000 999 5000 100000 0
+  big ; gen_random.py 1000 999 5000 100000 2

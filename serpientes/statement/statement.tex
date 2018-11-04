@@ -18,10 +18,10 @@
   Si al finalizar un movimiento un jugador cae en una casilla donde comienza una
   escalera, sube por ella hasta la casilla donde esta termina.
   Si, por el contrario, cae en una en donde comienza la cabeza de una serpiente,
-  desciende por esta hasta la casilla donde finaliza su cola. 
+  desciende por esta hasta la casilla donde finaliza su cola.
   El primero en llegar a la última casilla, marcada con una estrella en la
   imagen de abajo, es quién gana el juego.
-  
+
   \begin{center}
   \includegraphics[scale=0.8]{tablero}
   \end{center}
@@ -79,7 +79,7 @@
 \end{problemDescription}
 
 \begin{inputDescription}
-  La entrada comienza con una línea conteniendo dos enteros $M$ y $M$ ($2 \leq
+  La entrada comienza con una línea conteniendo dos enteros $M$ y $N$ ($2 \leq
   M, N \leq 1000$), correspondientes respectivamente a la cantidad de filas y
   columnas en el tablero.
   La siguiente línea contiene un entero $E$ ($E \geq 0$) correspondiente a la
@@ -104,11 +104,14 @@
 
 \begin{scoreDescription}
   \score{10} Se probarán varios casos donde el tablero no contiene ninguna
-  escalera ni serpiente ($E = 0$).
+  escalera ni serpiente y la cantidad de turnos es menor o igual que 100
+  ($E = 0$, $T \leq 100$).
   \score{10} Se probarán varios casos donde la cantidad de escaleras y
-  serpientes es menor o igual que 100 ($E \leq 100$)
+  serpientes es menor o igual que 100 y la cantidad de turnos es menor o igual
+  que $10^4$ ($E \leq 100$, $T \leq 10^4$)
   \score{10} Se probarán varios caso donde la cantidad de escaleras y serpientes
-  es menor o igual que 5000 ($E \leq 5000$)
+  es menor o igual que 5000 y la cantidad de turnos es menor o igual que $10^5$
+  ($E \leq 5000$, $T \leq 10^5$)
 \end{scoreDescription}
 
 \begin{sampleDescription}
