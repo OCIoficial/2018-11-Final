@@ -28,12 +28,12 @@
   # Use sample data as test
   1 ; copy statement/sample-2.in
 
-  # Spirals (n d gap direction)
-  2 ; generator.py spiral 10 1 1 cw
-  2 ; generator.py spiral 10 1 1 ccw
-  2 ; generator.py spiral 10 2 1 cw
-  2 ; generator.py spiral 100 2 2 cw
-  2 ; generator.py spiral 100 2 2 ccw
+  # Spirals (n d gap)
+  2 ; generator.py spiral 10 1 1
+  2 ; generator.py spiral 10 1 1
+  2 ; generator.py spiral 10 2 1
+  2 ; generator.py spiral 100 2 2
+  2 ; generator.py spiral 100 2 2
 
   # Output is 0
   3 ; generator.py random_density 2 1 0.222

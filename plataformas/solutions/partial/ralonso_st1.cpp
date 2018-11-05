@@ -17,7 +17,7 @@ int main(int argc, char *argv[]) {
         }
     }
 
-    cout << (min(abs(sx - fx), abs(sy - fy)) + d - 1) / d << endl;
+    cout << (max(abs(sx - fx), abs(sy - fy)) + d - 1) / d << endl;
 
     return 0;
 }
