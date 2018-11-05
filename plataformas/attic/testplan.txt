@@ -13,28 +13,39 @@
 
 
 [Subtask 1]
-  # Random tests (seed n d rho)
-  1 ; generator.py 1 100 1 1
-  1 ; generator.py 2 100 2 1
-  1 ; generator.py 3 100 5 1
-  1 ; generator.py 4 100 10 1
-  1 ; generator.py 5 100 100 1
+  # Use sample data as test
+  1 ; copy statement/sample-1.in
+
+  # Random tests (n d rho)
+  2 ; generator.py random_density 100 1 1
+  2 ; generator.py random_density 100 2 1
+  2 ; generator.py random_density 100 5 1
+  2 ; generator.py random_density 100 10 1
+  2 ; generator.py random_density 100 100 1
 
 
 [Subtask 2]
   # Use sample data as test
-  1 ; copy statement/sample-1.in
   1 ; copy statement/sample-2.in
 
-  # Random tests (seed n d rho)
-  2 ; generator.py 1 100 5 0.3
-  2 ; generator.py 2 100 5 0.3
-  2 ; generator.py 3 100 5 0.3
-  2 ; generator.py 4 100 5 0.3
-  2 ; generator.py 5 100 5 0.3
-  2 ; generator.py 6 100 5 0.3
-  2 ; generator.py 7 100 5 0.3
-  2 ; generator.py 8 100 5 0.3
-  2 ; generator.py 9 100 5 0.3
-  2 ; generator.py 0 100 5 0.3
+  # Spirals (n d gap direction)
+  2 ; generator.py spiral 10 1 1 cw
+  2 ; generator.py spiral 10 1 1 ccw
+  2 ; generator.py spiral 10 2 1 cw
+  2 ; generator.py spiral 100 2 2 cw
+  2 ; generator.py spiral 100 2 2 ccw
+
+  # Output is 0
+  3 ; generator.py random_density 2 1 0.222
+
+  # Random tests (n d rho)
+  4 ; generator.py random_density 5 4 0.3
+  4 ; generator.py random_density 8 5 0.3
+  4 ; generator.py random_density 10 3 0.3
+  4 ; generator.py random_density 10 1 0.6
+  4 ; generator.py random_density 20 4 0.6
+  4 ; generator.py random_density 100 5 0.4
+  4 ; generator.py random_density 100 99 0.2
+  4 ; generator.py random_density 100 5 0.3
+  4 ; generator.py random_density 100 5 0.3
 

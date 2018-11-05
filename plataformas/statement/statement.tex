@@ -79,26 +79,26 @@ puede saltar.
 \end{inputDescription}
 
 \begin{outputDescription}
-Si Ociman puede llegar al edificio de la OCI, la entrada debe consistir
-en un entero correspondiente al mínimo número de saltos que debe realizar para
-lograrlo.
-En caso contrario, la salida debe contener la palabra \verb-Inalcanzable-.
+La entrada debe consistir en un entero correspondiente al mínimo número de saltos
+que Ociman debe realizar para llegar al edificio de la OCI.
+Se garantiza que siempre existirá un camino válido.
 \end{outputDescription}
 
 \begin{scoreDescription}
   % TBD distribución de puntajes
-  \score{10} $1 \le N \le ?$. $B_{i,j}$ es siempre 1.
-  \score{10} $1 \le N \le ?$. No hay restricciones adicionales.
+  \score{10} $1 \le N \le 50$. $B_{i,j}$ es siempre 1.
+  \score{10} $1 \le N \le 50$. No hay restricciones adicionales.
 \end{scoreDescription}
 
 \begin{sampleDescription}
-\sampleIO{sample-1}
-Este caso corresponde al ejemplo de la figura.
-
 \sampleIO{sample-2}
-En este caso, como $d$ es 1, Ociman solo puede saltar a los edificios adyacentes.
-Como todos ellos son irregulares, Ociman se encuentra atrapado y por lo tanto no
-puede llegar al edificio de la OCI.
+Este caso corresponde al ejemplo de la figura.
+Ociman puede saltar a la posición (5, 3) y luego a la posición (5, 1), donde se encuentra el edificio de la OCI.
+
+\sampleIO{sample-1}
+Ociman parte en la posición (3, 4).
+Desde allí puede realizar la secuencia de saltos (3, 4) $\rightarrow$ (4, 3) $\rightarrow$ (4, 2) $\rightarrow$ (4, 1).
+
 \end{sampleDescription}
 
 \end{document}

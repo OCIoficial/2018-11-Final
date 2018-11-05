@@ -39,8 +39,9 @@ int main(int argc, char *argv[]) {
         bfs.pop();
         px = bfs.front();
         bfs.pop();
-        px = bfs.front();
+        py = bfs.front();
         bfs.pop();
+        cerr << px << " " << py << " " << jumps << endl;
 
         if(px == fx && py == fy) {
           found = true;
