@@ -60,7 +60,7 @@ para llegar?
 
 \begin{inputDescription}
 La primera línea de la entrada contiene dos enteros $N$ y $d$, que corresponden
-respectivamente a las dimensiones de la ciudad ($1 < N$) y la distancia máxima
+respectivamente a las dimensiones de la ciudad ($1 < N \leq 50$) y la distancia máxima
 que puede saltar Ociman ($1 \le d < N$).
 
 La segunda línea contiene dos enteros $U$ y $V$, que corresponden a las
@@ -69,8 +69,8 @@ coordenadas de la posición inicial de Ociman ($1 \le U, V \le N$).
 La tercera línea contiene dos enteros $X$ e $Y$, que corresponden a las
 coordenadas del edificio de la OCI ($1 \le X, Y \le N$).
 
-Las siguientes $N$ líneas describen la ciudad.
-Cada una de ellas contiene $N$ enteros.
+Cada una de las siguientes $N$ contiene $N$ enteros, describiendo una matriz que
+representa la ciudad.
 El $i$-ésimo entero en la línea $j$-ésima contendrá un 1 si Ociman puede saltar
 sobre el edificio en las coordenadas $(i, j)$ o 0 en caso contrario.
 Se garantiza que tanto las coordenadas de la posición inicial de Ociman y las
@@ -86,8 +86,9 @@ Se garantiza que siempre existirá un camino válido.
 
 \begin{scoreDescription}
   % TBD distribución de puntajes
-  \score{10} $1 \le N \le 50$. $B_{i,j}$ es siempre 1.
-  \score{10} $1 \le N \le 50$. No hay restricciones adicionales.
+  \score{25} Se probarán varios casos donde Ociman puede saltar sobre todos los
+  edificios, es decir, la matriz que describe la ciudad tiene solo unos.
+  \score{75} Se probarán varios casos sin restricciones adicionales.
 \end{scoreDescription}
 
 \begin{sampleDescription}
