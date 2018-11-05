@@ -20,7 +20,7 @@
   escalera, sube por ella hasta la casilla donde esta termina.
   Si, por el contrario, cae en una en donde comienza la cabeza de una serpiente,
   desciende por esta hasta la casilla donde finaliza su cola.
-  El primero en llegar a la última casilla, marcada con una estrella en la
+  El primero en llegar a la casilla final, marcada con una estrella en la
   imagen de abajo, es quién gana el juego.
 
   \begin{center}
@@ -96,12 +96,13 @@
   Cada una de las siguientes $E$ líneas describe uno de los objetos en el
   tablero (escaleras o serpientes).
   Cada objeto está descrito con cuatro enteros $a, b, c$ y $d$ ($0 \leq a, c
-  \leq M, 0 \leq b, d \leq N$)
+  < M, 0 \leq b, d < N$)
   representando que el objeto comienza en la casilla $(a, b)$ y termina en la
   casilla $(c, d)$.
   No habrán nunca dos objetos que comiencen en la misma casilla, un objeto
   nunca comenzará en la casilla que termina otro y un objeto nunca comenzará en
   la misma posición en la que termina.
+  Adicionalmente, nunca habrá un objeto que comience en la casilla final.
 
   A continuación viene una línea con un entero $T$ ($T > 0$) conteniendo la
   cantidad de turnos.
@@ -111,8 +112,8 @@
 
 \begin{outputDescription}
   La salida debe contener una línea con dos enteros correspondientes a la
-  columna y fila, de la posición donde termina el jugador.
-  Si en cualquier momento el jugador termina o pasa por sobre la última casilla
+  fila y columna de la casilla donde termina el jugador.
+  Si en cualquier momento el jugador termina o pasa por sobre la casilla final
   el juego se detiene automáticamente y el resto de los dados debe ignorarse.
 \end{outputDescription}
 
