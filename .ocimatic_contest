@@ -1,9 +1,9 @@
 {
     "tasks": [
-        "chipotle",
         "serpientes",
-        "ociman",
-        "baldosas"
+        "baldosas",
+        "chipotle",
+        "ociman"
     ],
     "phase": "Final Nacional"
 }
