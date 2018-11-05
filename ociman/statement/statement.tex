@@ -53,9 +53,7 @@ con una cruz.
 
 Inicialmente Ociman comienza en el edificio en las coordenadas $(U, V)$ y tiene
 que llegar al edificio en las coordenadas $(X, Y)$.
-¿Podrá Ociman llegar al edificio de la OCI o deberá buscar otro plan?
-En caso de ser posible, ?`cuál es el número mínimo de saltos que debe realizar
-para llegar? 
+?`Cuál es el número mínimo de saltos que debe realizar para llegar a su destino? 
 \end{problemDescription}
 
 \begin{inputDescription}
@@ -69,13 +67,12 @@ coordenadas de la posición inicial de Ociman ($1 \le U, V \le N$).
 La tercera línea contiene dos enteros $X$ e $Y$, que corresponden a las
 coordenadas del edificio de la OCI ($1 \le X, Y \le N$).
 
-Cada una de las siguientes $N$ contiene $N$ enteros, describiendo una matriz que
-representa la ciudad.
+Cada una de las siguientes $N$ líneas contiene $N$ enteros, describiendo una
+matriz que representa la ciudad.
 El $i$-ésimo entero en la línea $j$-ésima contendrá un 1 si Ociman puede saltar
 sobre el edificio en las coordenadas $(i, j)$ o 0 en caso contrario.
-Se garantiza que tanto las coordenadas de la posición inicial de Ociman y las
-coordenadas del edificio de la OCI tendrán edificios sobre los cuales se
-puede saltar.
+Se garantiza que tanto la coordenada $(U, V)$ como la coordenada $(X, Y)$
+contendrán edificios sobre los cuales Ociman puede saltar.
 \end{inputDescription}
 
 \begin{outputDescription}
