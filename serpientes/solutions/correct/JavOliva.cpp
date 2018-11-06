@@ -60,11 +60,11 @@ int N, M;
         int dado;
         cin >> dado;
         avanza(PosActual, dado);
-        PosActual=mapa[PosActual.f][PosActual.s];
         if (gano(PosActual)){
             PosActual=mp(N-1, M-1);
             break;
         }
+        PosActual=mapa[PosActual.f][PosActual.s];
     }
     cout << PosActual.f << " " << PosActual.s << "\n";
     return 0;
