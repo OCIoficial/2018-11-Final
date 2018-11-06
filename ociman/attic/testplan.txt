@@ -12,7 +12,7 @@
 # To generate test cases using test plan use `ocimatic gen-input`
 
 
-[Subtask 1]
+[Subtask 1 - validators/st1.cpp]
   # Use sample data as test
   1 ; copy statement/sample-1.in
 
@@ -24,7 +24,7 @@
   2 ; generator.py random_density 100 100 1
 
 
-[Subtask 2]
+[Subtask 2 - validators/st2.cpp]
   # Use sample data as test
   1 ; copy statement/sample-2.in
 

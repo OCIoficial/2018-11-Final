@@ -29,10 +29,11 @@ int main() {
   int Y = inf.readInt(1, N, "Y");
   inf.readEoln();
 
-  vector< vector< int > > grid(N, vector< int >(N));
+  vector< vector< int > > grid(N+1, vector< int >(N + 1));
 
   for (int i = 1; i <= N; i++) {
-    for (int j = 1; j < N; j++) {
+    int j;
+    for (j = 1; j < N; j++) {
       grid[i][j] = inf.readInt(0, 1, "b_ij");
       inf.readSpace();
     }
