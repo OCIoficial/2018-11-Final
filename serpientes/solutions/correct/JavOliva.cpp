@@ -1,80 +1,70 @@
 #include <bits/stdc++.h>
 
 using namespace std;
+#define pis pair<int,string>
 #define f first
 #define s second
 #define mp make_pair
-#define pi pair<int,int>
-int N, M;
 
-void avanzaPar(pi &PosActual){
-    PosActual.s++;
-    if (PosActual.s==M){
-        PosActual.f++;
-        PosActual.s--;
+int D, T, mod=1e6+9, largest=0;
+vector<int>answer;
+vector<vector<int> >graph;
+string text;
+
+void gen(int left){
+    int sum=answer[left];
+    int node=0;
+    for (int i=0;i<largest and left+i<T;i++){
+        int value=text[left+i]-'a'+1;
+        node=graph[node][value];
+        if (node==0){
+            break;
+        }
+        answer[left+i+1]+=(sum*graph[node][0]);
+        answer[left+i+1]=answer[left+i+1]%mod;
     }
 }
 
-void avanzaImpar(pi &PosActual){
-    PosActual.s--;
-    if (PosActual.s==-1){
-        PosActual.s++;
-        PosActual.f++;
+void addGraph(string &w){
+    int node=0;
+    int NodesCount=graph.size();
+    for (int i=0;i<w.size();i++){
+        int Next=w[i]-'a'+1;
+        int NextNode=graph[node][Next];
+        if (NextNode==0){
+            graph[node][Next]=NodesCount;
+            NodesCount++;
+            graph.push_back(vector<int>(30, 0));
+            NextNode=NodesCount-1;
+        }
+        node=NextNode;
+        if (i==w.size()-1)
+            graph[node][0]++;
     }
-}
-
-void avanza(pi &PosActual){
-    if (PosActual.f%2){
-        avanzaImpar(PosActual);
-        return;
-    }
-    avanzaPar(PosActual);
-}
-
-void avanza(pi &PosActual, int dado){
-    while(dado--){
-        avanza(PosActual);
-    }
-}
-
-bool gano(pi PosActual){
-    if (PosActual.f>=N-1 and (PosActual.s==0 or PosActual.s==M-1))
-        return true;
-    return false;
 }
 
 int main()
 {
     ios::sync_with_stdio(0);cin.tie(0);
-    cin >> N >> M;
-    vector<vector<pi> >mapa(N, vector<pi>(M, mp(0, 0)));
-    for (int i=0;i<N;i++){
-        for (int j=0;j<M;j++){
-            mapa[i][j]=mp(i, j);
-        }
+    graph.resize(30, vector<int>(30, 0));
+    for (int i=0;i<30;i++){
+        graph[0][i]=i;
     }
+    cin >> D;
+    string word;
+    for (int i=0;i<D;i++){
+        cin >> word;
+        addGraph(word);
+        largest=max(largest, (int)word.size());
+    }
+    cin >> text;
+    T=text.size();
+    answer.resize(T+1, 0);
+    answer[0]=1;
 
-    int E;
-    cin >> E;
-    while(E--){
-        int a, b, c, d;
-        cin >> a >> b >> c >> d;
-        mapa[a][b]=mp(c, d);
+    for (int i=0;i<T;i++){
+        gen(i);
     }
-
-    pi PosActual=mp(0, 0);
-    int T;
-    cin >> T;
-    while (T--){
-        int dado;
-        cin >> dado;
-        avanza(PosActual, dado);
-        PosActual=mapa[PosActual.f][PosActual.s];
-        if (gano(PosActual)){
-            PosActual=mp(N-1, M-1);
-            break;
-        }
-    }
-    cout << PosActual.f << " " << PosActual.s << "\n";
+    cout << answer[T] << "\n";
     return 0;
 }
