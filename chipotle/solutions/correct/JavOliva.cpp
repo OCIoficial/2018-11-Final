@@ -18,6 +18,8 @@ void gen(int left){
     for (int i=0;i<largest and left+i<T;i++){
         int value=text[left+i]-'a'+1;
         node=graph[node][value];
+        if (node==0)
+            break;
         answer[left+i+1]+=(sum*graph[node][0]);
         answer[left+i+1]=answer[left+i+1]%mod;
     }
