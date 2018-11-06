@@ -6,7 +6,7 @@ class serpientes {
     return r * nc + ((r & 1) == 0 ? c : nc - 1 - c);
   }
 
-  public static int positionToPairString(int p, int nr, int nc) {
+  public static String positionToPairString(int p, int nr, int nc) {
     int r = p / nc;
     int c = (r & 1) == 0 ? p % nc : nc - 1- p % nc;
     return r + " " + c;
