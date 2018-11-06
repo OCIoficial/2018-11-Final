@@ -10,6 +10,6 @@ int main()
     int a, b;
     cin >> a >> b;
 
-    cout << ((M+a-1)/a)*((N+b-1)/b);
+    cout << ((M+a-1)/a)*((N+b-1)/b) << "\n";
     return 0;
 }
