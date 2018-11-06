@@ -12,7 +12,7 @@ class baldosas {
     M = Integer.parseInt(st.nextToken());
     N = Integer.parseInt(st.nextToken());
 
-    StringTokenizer st = new StringTokenizer(br.readLine());
+    st = new StringTokenizer(br.readLine());
 
     m = Integer.parseInt(st.nextToken());
     n = Integer.parseInt(st.nextToken());
