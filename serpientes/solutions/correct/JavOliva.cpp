@@ -32,7 +32,7 @@ int N, M;
     }
 }
  bool gano(pi PosActual){
-    if ((PosActual.f>N-1) or (PosActual.f==N-1 and (PosActual.s==0 or PosActual.s==M-1)))
+    if ((PosActual.f>N-1) or (PosActual.f==N-1 and PosActual.s==M-1 and N%2) or (PosActual.s==0 and PosActual.f==N-1 and !(N%2)))
         return true;
     return false;
 }
