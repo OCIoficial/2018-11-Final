@@ -2,6 +2,10 @@
 #include <set>
 using namespace std;
 
+pair<int, int> final_pos(int M, int N) {
+  return M % 2 == 0 ? make_pair(M-1, 0) : make_pair(M-1, N-1);
+}
+
 int main() {
   registerValidation();
   int M = inf.readInt(2, 1000, "M");
@@ -13,6 +17,7 @@ int main() {
   inf.readEoln();
   set<pair<int, int>> start;
   set<pair<int, int>> end;
+  auto fp = final_pos(M, N);
   for (int i = 0; i < E; ++i) {
     int a = inf.readInt(0, M - 1, "a");
     inf.readSpace();
@@ -22,6 +27,8 @@ int main() {
     inf.readSpace();
     int d = inf.readInt(0, N - 1, "d");
     inf.readEoln();
+    ensuref(a != fp.first or b != fp.second, "Un objeto no puede empezar en la casilla final");
+    ensuref(a != 0 or b != 0, "Un objeto no puede empezar en la casilla inicial");
     ensuref(a != c or b != d, "Un objeto no puede empezar donde termina");
     ensuref(start.count({a, b}) == 0, "Dos objetos no pueden empezar en la misma posición");
     ensuref(end.count({a, b}) == 0, "Un objeto no pueden empezar donde termina otro");
