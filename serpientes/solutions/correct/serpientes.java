@@ -52,11 +52,17 @@ class serpientes {
     for (int i = 0; i < tt; i++) {
       p += Integer.parseInt(st.nextToken());
 
-      if (p + 1 >= m * n) break;
+      if (p + 1 >= m * n) {
+        p = m * n - 1;
+        break;
+      }
 
       p = jump[p];
 
-      if (p + 1 >= m * n) break;
+      if (p + 1 >= m * n) {
+        p = m * n - 1;
+        break;
+      }
     }
 
     System.out.println(positionToPairString(p, m, n));
