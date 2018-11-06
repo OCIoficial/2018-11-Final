@@ -62,6 +62,8 @@ int N, M;
         avanza(PosActual, dado);
         if (gano(PosActual)){
             PosActual=mp(N-1, M-1);
+            if (!(N%2))
+                PosActual.s=0;
             break;
         }
         PosActual=mapa[PosActual.f][PosActual.s];
